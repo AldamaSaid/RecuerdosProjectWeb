@@ -1,0 +1,27 @@
+extends ../../layout/index
+block cuerpocontenido
+    br
+    h1.text-center=pagina
+    br
+    if errores
+        div(class="row justify-content-center text-bg-danger" )
+            div(class="col-md-4")
+                each er in errores
+                    h1(class="fw-bold fs-6")=er.msg
+    div(class="row justify-content-center")
+        div(class="col-md-5")
+            form(class="space-y-5" action="/hotel/hoteles/registrandoHotel" method="POST" noValidate)
+                div(class="mb-1")
+                    label(for="nombre" class="form-label") Sucursal
+                    input#nombre(class="form-control" type="text" placeHolder="Sucursal" name="nombre" value= dato?dato.nombre:'')
+                div(class="mb-1")
+                    label(for="direccion" class="form-label") Direccion
+                    input#direccion(class="form-control" type="text" placeHolder="Direccion" name="direccion" value=dato?dato.direccion:'')
+                div(class="mb-1")
+                    label(for="telefono" class="form-label") Telefono
+                    input#telefono(class="form-control" type="text" placeHolder="Telefono" name="telefono" value=dato?dato.telefono:'')
+                div(class="mb-1")
+                    label(for="correo" class="form-label") Correo
+                    input#correo(class="form-control" type="text" placeHolder="Correo" name="correo" value=dato?dato.correo:'')
+                div(class="mb-1")
+                    button(type="submit" class="btn btn-primary col-auto") Registrar

@@ -1,0 +1,25 @@
+html
+    head
+        title Iniciar Sesion
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    body
+        if pagina
+            div(class="row justify-content-center text-bg-danger" )
+                div(class="col-md-4")
+                    each er in pagina
+                        h1(class="fw-bold fs-6")=er.msg
+        div.container.mt-5
+        div.row
+            div.col-md-6.offset-md-3
+                h1.text-center Iniciar Sesión
+                form(action='/cred/iniciarsesion', method='post')
+                    input(type="hidden" name="_csrf" value=csrf)
+                    div(class="mb-1")
+                        label(for="correo" class="form-label") Correo:
+                        input#correo(class="form-control" type="text" placeHolder="Correo" name="correo" value= dato?dato.correo:'')
+                    div(class="mb-1")
+                        label(for="password" class="form-label") Contraseña
+                        input#password(class="form-control" type="text" placeHolder="Contraseña" name="password" value=dato?dato.password:'')
+                    button.btn.btn-primary(type='submit') Iniciar Sesión
+                a.btn.btn-secondary(href='/cred/registrar') Registrar
+                a.btn.btn-link(href='/cred/cambiarcontrasenia') ¿Olvidaste tu contraseña?

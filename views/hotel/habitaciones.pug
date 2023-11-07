@@ -1,0 +1,6 @@
+extends ../layout/index
+block cuerpocontenido 
+    h1.text-center Lista Habitaciones
+    br 
+    each dameHabitaciones in habitaciones
+        h3= dameHabitaciones.piso

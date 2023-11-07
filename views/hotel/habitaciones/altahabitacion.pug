@@ -1,0 +1,32 @@
+extends ../../layout/index
+block cuerpocontenido
+    br
+    h1.text-center=pagina
+    br
+    if errores
+        div(class="row justify-content-center text-bg-danger" )
+            div(class="col-md-4")
+                each er in errores
+                    h1(class="fw-bold fs-6")=er.msg
+    div(class="row justify-content-center")
+        div(class="col-md-5")
+            form(class="space-y-5" action="/hotel/habitaciones/registrandoHabitacion" method="POST" noValidate)
+                div(class="mb-1")
+                    label(for="hotelid" class="form-label") Nombre del Hotel&nbsp; &nbsp; &nbsp;
+                    select#hotel(name="id_htl")
+                        each datos in info
+                            if(datos.dato1!=hotelselect)
+                                option(value=datos.dato1) #{datos.dato2}
+                            else
+                                option(value=datos.dato1 selected) #{datos.dato2}
+                div(class="mb-1")
+                    label(for="piso" class="form-label") Piso:
+                    input#piso(class="form-control" type="text" placeHolder="Piso" name="piso" value= dato?dato.piso:'')
+                div(class="mb-1")
+                    label(for="nombre" class="form-label") Tipo de habitacion:
+                    input#nombre(class="form-control" type="text" placeHolder="Nombre de la habitacion" name="nombre" value=dato?dato.nombre:'')
+                div(class="mb-1")
+                    label(for="refrigerador" class="form-label") Tiene Refrigerador:
+                    input#refrigerador(class="form-control" type="text" placeHolder="Si o no" name="refrigerador" value=dato?dato.refrigerador:'')
+                div(class="mb-1")
+                    button(type="submit" class="btn btn-primary col-auto") Registrar

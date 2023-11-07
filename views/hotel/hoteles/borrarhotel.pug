@@ -1,0 +1,30 @@
+extends ../../layout/index
+block cuerpocontenido
+    br
+    h1(class="text-center")=pagina
+    br
+    if errores
+        div(class="row justify-content-center text-bg-danger" )
+            div(class="col-md-4")
+                each er in errores
+                    h1(class="fw-bold fs-6")=er.msg
+    div(class="row justify-content-center")
+        div(class="col-md-5")
+            form(class="space-y-5" action="/hotel/hoteles/buscarHoteles" method="POST" noValidate)
+                div(class="mb-1")
+                    label(for="nombre" class="form-label") Sucursal que desea eliminar
+                    input#nombre(class="form-control" type="text" placeHolder="Sucursal" name="nombre" value= nombre?nombre:'')
+                div(class="mb-1")
+                    button(type="submit" class="btn btn-primary col-auto") Buscar
+        if(hot)
+            each g in hot
+                div(class="card col-md-2")
+                    img(src="/img/hotel.png",class="card-img-top")
+                    div(class="card-body align-self-center")
+                        h6=`Sucursal: ${g.nombre}`
+                        h6=`Direccion: ${g.direccion}`
+                        h6=`Telefono: ${g.telefono}`
+                        h6=`Correo: ${g.correo}`
+                    blockquote
+                        if(g.nombre)
+                            a(href=`/hotel/hoteles/eliminarHoteles?id=${g.id_htl}` class='btn btn-danger btn-clock') Eliminar

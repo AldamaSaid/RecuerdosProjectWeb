@@ -1,0 +1,20 @@
+html
+    head
+        title Reestablecer contraseña
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    body
+        if errores
+            div(class="row justify-content-center text-bg-danger" )
+                div(class="col-md-4")
+                    each er in errores
+                        h1(class="fw-bold fs-6")=er.msg
+        div.container.mt-5
+            div.row
+                div.col-md-6.offset-md-3
+                    h1.text-center Reestablecer contraseña
+                    form(action='/cred/buscarcorreo', method='POST', noValidate)
+                        input(type="hidden" name="_csrf" value=csrf)
+                        div.form-group
+                            label(for='correo') Correo Electrónico:
+                            input#correo.form-control(type='email', name='correo', required)
+                        button.btn.btn-primary(type='submit') Aceptar

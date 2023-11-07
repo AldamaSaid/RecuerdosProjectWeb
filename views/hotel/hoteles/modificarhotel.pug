@@ -1,0 +1,55 @@
+extends ../../layout/index
+block cuerpocontenido
+    br
+    h1(class="text-center")=pagina
+    br
+    if errores
+        div(class="row justify-content-center text-bg-danger" )
+            div(class="col-md-4")
+                each er in errores
+                    h1(class="fw-bold fs-6")=er.msg
+    if(vista)
+        div(class="row justify-content-center")
+            div(class="col-md-5")
+                form(class="space-y-5" action="/hotel/hoteles/buscarModificarHotel" method="POST" noValidate)
+                    div(class="mb-1")
+                        label(for="nombre" class="form-label") Nombre del Hotel
+                        input#nombre(class="form-control" type="text" placeHolder="Nombre del Hotel" name="nombre" value= nombre?nombre:'')
+                    div(class="mb-1")
+                        button(type="submit" class="btn btn-primary col-auto") Enviar
+    if(info)
+        table(class="table")
+            thread
+                th(scope="col") Hotel
+                th(scope="col") Direccion
+                th(scope="col") Telefono
+                th(scope="col") Correo
+                th(scope="col") Accion
+            tbody
+                each i in info
+                    tr
+                        th(scope="row") #{i.nombre}
+                        td #{i.direccion}
+                        td #{i.telefono}
+                        td #{i.correo}
+                        td
+                            a(href=`/hotel/hoteles/llenarFormularioHotel?id=${i.id_htl}` class='btn btn-danger btn-clock') Modificar
+    if(valores)
+        div(class="row justify-content-center")
+            div(class="col-md-5")
+                form(class="space-y-5" action="/hotel/hoteles/accionModificarHotel" method="POST" noValidate)
+                    input#idhotel(type="hidden" name="id_h" value=valores?valores.id_htl:'')
+                    div(class="mb-1")
+                        label(for="nombre" class="form-label") Sucursal
+                        input#nombre(class="form-control" type="text" placeHolder="Sucursal" name="nombre" value= valores?valores.nombre:'')
+                    div(class="mb-1")
+                        label(for="direccion" class="form-label") Direccion
+                        input#direccion(class="form-control" type="text" placeHolder="Direccion" name="direccion" value=valores?valores.direccion:'')
+                    div(class="mb-1")
+                        label(for="telefono" class="form-label") Telefono
+                        input#telefono(class="form-control" type="text" placeHolder="Telefono" name="telefono" value=valores?valores.telefono:'')
+                    div(class="mb-1")
+                        label(for="correo" class="form-label") Correo
+                        input#correo(class="form-control" type="text" placeHolder="Correo" name="correo" value=valores?valores.correo:'')
+                    div(class="mb-1")
+                        button(type="submit" class="btn btn-primary col-auto") Modificar

@@ -1,0 +1,23 @@
+html
+    head
+        title Confirma contraseña
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    body
+        if errores
+            div(class="row justify-content-center text-bg-danger" )
+                div(class="col-md-4")
+                    each er in errores
+                        h1(class="fw-bold fs-6")=er.msg
+        div.container.mt-5
+            div.row
+                div.col-md-6.offset-md-3
+                    h1.text-center Escribe tu nueva contraseña
+                    form(action='/cred/confirmarcambiarcontrasenia', method='POST', noValidate)
+                        input#token(type="hidden" name="token" value=valores?valores.token:'')
+                        div(class="mb-1")
+                            label(for="password" class="form-label") Nueva contraseña:
+                            input#password(class="form-control" type="text" placeHolder="Contraseña" name="password" value=dato?dato.password:'')
+                        div(class="mb-1")
+                            label(for="confirmar" class="form-label") Confirmar:
+                            input#confirmar(class="form-control" type="text" placeHolder="Contraseña" name="confirmar" value=dato?dato.confirmar:'')
+                        button.btn.btn-primary(type='submit') Aceptar

@@ -1,0 +1,15 @@
+extends ../../layout/index
+block cuerpocontenido
+    br
+    h1(class="text-center")=pagina
+    br
+    div(class="row justify-content-center")
+        each h in hotel
+            div(class="col")
+                div(class="card")
+                    img(src="/img/hotel.png",class="card-img-top")
+                    div(class="card-body align-self-center")
+                        h6=`Sucursal:${h.nombre}`
+                        h6=`Direccion:${h.direccion}`
+                        h6=`Telefono:${h.telefono}`
+                        h6=`Correo:${h.correo}`

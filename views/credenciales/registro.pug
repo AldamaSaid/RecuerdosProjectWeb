@@ -1,0 +1,27 @@
+html
+    head
+        title Registro de Usuario
+        link(rel='stylesheet', href='https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css')
+    body
+        if errores
+            div(class="row justify-content-center text-bg-danger" )
+                div(class="col-md-4")
+                    each er in errores
+                        h1(class="fw-bold fs-6")=er.msg
+        div.container.mt-5
+            div.row
+                div.col-md-6.offset-md-3
+                    h2(text-center) Registro de Usuario
+                    form(action='/cred/registrarUsuario', method='POST', noValidate)
+                        input(type="hidden" name="_csrf" value=csrf)
+                        div.form-group
+                            label(for='nombre') Nombre:
+                            input#nombre.form-control(type='text', name='nombre', required)
+                        div.form-group
+                            label(for='correo') Correo Electrónico:
+                            input#correo.form-control(type='email', name='correo', required)
+                        div.form-group
+                            label(for='password') Contraseña:
+                            input#password.form-control(type='password', name='password', required)
+                        button.btn.btn-primary(type='submit') Registrarse
+                    a.btn.btn-secondary(href='/') Iniciar Sesión
