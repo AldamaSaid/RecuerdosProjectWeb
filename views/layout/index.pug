@@ -1,13 +1,25 @@
+//- html(lang="es")
+//-     head
+//-         meta(charset="UTF-8")
+//-         meta(name="viewport", content="width=device-width, initial-scale=1.0")
+//-         title Mi Hotel
+//-         link(rel="stylesheet", href="/css/bootstrap.css")
+//-         script(src="/js/bootstrap.bundle.js")
+//-         script(src="/js/pooper.min.js")
+//-     body
+//-         include nav
+//-         include header
+//-         main(class="mx-auto container mt-10 px-2")
+//-             block cuerpocontenido
+
 html(lang="es")
     head
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
-        title Mi Hotel
-        link(rel="stylesheet", href="/css/bootstrap.css")
-        script(src="/js/bootstrap.bundle.js")
-        script(src="/js/pooper.min.js")
-    body
-        include nav
-        include header
-        main(class="mx-auto container mt-10 px-2")
-            block cuerpocontenido
+        title Mis configuraciones |
+        link(rel="stylesheet", href="/css/app.css")
+body
+    include header
+    include nav
+    main(class="mx-auto container mt-10 px-2")
+        block cuerpocontenido

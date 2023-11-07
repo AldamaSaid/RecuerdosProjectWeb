@@ -4,7 +4,7 @@ const DirectorioImagen = db.define("directorios", {
     autoIncrement: true,
     primaryKey: true,
   },
-  nombre: {
+  directorio: {
     type: DataTypes.STRING,
     allowNull: false,
   },

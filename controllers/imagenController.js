@@ -6,7 +6,7 @@ import Directorio from "@/models/Directorio.js"
 const crearDirectorio = async (req, res) => {
     try {
       // Extrae el nombre del directorio y el correo del usuario del cuerpo de la solicitud
-      const { nombre, correo } = req.body;
+      const { direct, correo } = req.body;
   
       // Valida si el usuario existe en la base de datos mediante su correo
       const usuario = await Usuario.findOne({
@@ -19,7 +19,7 @@ const crearDirectorio = async (req, res) => {
   
       // Crea el directorio asociado al usuario en la base de datos
       const directorio = await Directorio.create({
-        nombre,
+        direct,
         usuarioId: usuario.id,
       });
   

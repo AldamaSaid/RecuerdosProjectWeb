@@ -1,3 +1,8 @@
+import db from "../config/db.js";
+import { Sequelize } from "sequelize";
+import { DataTypes } from "sequelize";
+import bcrypt from 'bcrypt';
+
 const Usuario = db.define('usuarios', {
     id_usr: {
         type: Sequelize.INTEGER,

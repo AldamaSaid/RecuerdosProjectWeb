@@ -1,50 +1,59 @@
-div(class="hstack gap-3" style="background-color: pink;")
-    div(class="p-2")
-        nav(class="navbar navbar-expand-lg")
-            div(class="container-fluid" )
-                a(class="navbar-brand" href="/inicio") Fes Aragon
-                button(class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation")
-                    span(class="navbar-toggler-icon")
-                div(class="collapse navbar-collapse" id="navbarScroll")
-                    ul(class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;")
-                        li(class="nav-item dropdown")
-                            a(class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false") Hoteles
-                            ul( class="dropdown-menu")
-                                li
-                                    a(class="dropdown-item" href="/hotel/hoteles/altaHotel") Alta Hotel
-                                li
-                                    a(class="dropdown-item" href="/hotel/hoteles/consultaHotel") Consulta Hotel
-                                li
-                                    a(class="dropdown-item" href="/hotel/hoteles/modificarHotel") Modificar Hotel
-                                li
-                                    a(class="dropdown-item" href="/hotel/hoteles/borrarHotel") Eliminar Hotel
-                        li(class="nav-item dropdown")
-                            a(class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false") Gerentes
-                            ul( class="dropdown-menu")
-                                li
-                                    a(class="dropdown-item" href="/hotel/gerente/altaGerente") Alta Gerente
-                                li
-                                    a(class="dropdown-item" href="/hotel/gerente/consultaGerente") Consulta Gerente
-                                li
-                                    a(class="dropdown-item" href="/hotel/gerente/modificarGerente") Modificar Gerente
-                                li
-                                    a(class="dropdown-item" href="/hotel/gerente/borrarGerente") Eliminar Gerente
-                        li(class="nav-item dropdown")
-                            a(class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false") Habitaciones
-                            ul( class="dropdown-menu")
-                                li
-                                    a(class="dropdown-item" href="/hotel/habitaciones/altaHabitacion") Alta Habitacion
-                                li
-                                    a(class="dropdown-item" href="/hotel/habitaciones/consultaHabitacion") Consulta Habitacion
-                                li
-                                    a(class="dropdown-item" href="") Modificar Habitacion
-                                li
-                                    a(class="dropdown-item" href="") Eliminar Habitacion
-    div(class="p-2 ms-auto")
-        div(class="container-fluid")
-            a(class="navbar-brand" href="#")
-                img(src="/img/cerrar_sesion.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top")
-                |Sesion
-    div(class="vr")
-    div(class="p-2")
-        |3
+//- div(class="hstack gap-3" style="background-color: pink;")
+//-     div(class="p-2")
+//-         nav(class="navbar navbar-expand-lg")
+//-             div(class="container-fluid" )
+//-                 a(class="navbar-brand" href="/inicio") Fes Aragon
+//-                 button(class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarScroll" aria-controls="navbarScroll" aria-expanded="false" aria-label="Toggle navigation")
+//-                     span(class="navbar-toggler-icon")
+//-                 div(class="collapse navbar-collapse" id="navbarScroll")
+//-                     ul(class="navbar-nav me-auto my-2 my-lg-0 navbar-nav-scroll" style="--bs-scroll-height: 100px;")
+//-                         li(class="nav-item dropdown")
+//-                             a(class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false") Hoteles
+//-                             ul( class="dropdown-menu")
+//-                                 li
+//-                                     a(class="dropdown-item" href="/hotel/hoteles/altaHotel") Alta Hotel
+//-                                 li
+//-                                     a(class="dropdown-item" href="/hotel/hoteles/consultaHotel") Consulta Hotel
+//-                                 li
+//-                                     a(class="dropdown-item" href="/hotel/hoteles/modificarHotel") Modificar Hotel
+//-                                 li
+//-                                     a(class="dropdown-item" href="/hotel/hoteles/borrarHotel") Eliminar Hotel
+//-                         li(class="nav-item dropdown")
+//-                             a(class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false") Gerentes
+//-                             ul( class="dropdown-menu")
+//-                                 li
+//-                                     a(class="dropdown-item" href="/hotel/gerente/altaGerente") Alta Gerente
+//-                                 li
+//-                                     a(class="dropdown-item" href="/hotel/gerente/consultaGerente") Consulta Gerente
+//-                                 li
+//-                                     a(class="dropdown-item" href="/hotel/gerente/modificarGerente") Modificar Gerente
+//-                                 li
+//-                                     a(class="dropdown-item" href="/hotel/gerente/borrarGerente") Eliminar Gerente
+//-                         li(class="nav-item dropdown")
+//-                             a(class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false") Habitaciones
+//-                             ul( class="dropdown-menu")
+//-                                 li
+//-                                     a(class="dropdown-item" href="/hotel/habitaciones/altaHabitacion") Alta Habitacion
+//-                                 li
+//-                                     a(class="dropdown-item" href="/hotel/habitaciones/consultaHabitacion") Consulta Habitacion
+//-                                 li
+//-                                     a(class="dropdown-item" href="") Modificar Habitacion
+//-                                 li
+//-                                     a(class="dropdown-item" href="") Eliminar Habitacion
+//-     div(class="p-2 ms-auto")
+//-         div(class="container-fluid")
+//-             a(class="navbar-brand" href="#")
+//-                 img(src="/img/cerrar_sesion.png" alt="Logo" width="30" height="24" class="d-inline-block align-text-top")
+//-                 |Sesion
+//-     div(class="vr")
+//-     div(class="p-2")
+//-         |3
+//- figure(class="md:flex bg-slate-100 rounded-xl p-8 md:p-0 dark:bg-slate-800")
+//-     div(clss="pt-6 md:p-8 text-center md:text-left space-y-4 shadow-lg")
+//-         blockquote
+//-             p(class="text-lg font-medium")
+//-                 nav(class="shadow-lg shadow-indigo-500/40 animate-pulse flex space-x-4")
+//-                     a(href="/cred/credenciales",class="transition ease-in-out delay-150 bg-blue-500 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-500 duration-300") Registro
+//-                     a(href="/") Mostrar
+//-                     a(href="/") Comentarios
+//-                     a(href="/") Creadores
